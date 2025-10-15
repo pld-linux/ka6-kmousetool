@@ -2,8 +2,8 @@
 # Conditional build:
 %bcond_with	tests		# build with tests
 %define		kdeappsver	25.08.2
-%define		kframever	5.94.0
-%define		qtver		5.15.2
+%define		kframever	6.3.0
+%define		qtver		6.7.0
 %define		kaname		kmousetool
 Summary:	kmousetool
 Name:		ka6-%{kaname}
@@ -15,24 +15,31 @@ Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kan
 # Source0-md5:	ee7da81f5f26658aefd728d49f042866
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Widgets-devel
-BuildRequires:	gettext-devel
+BuildRequires:	Qt6Gui-devel >= %{qtver}
+BuildRequires:	Qt6Multimedia-devel >= %{qtver}
+BuildRequires:	Qt6Widgets-devel >= %{qtver}
+BuildRequires:	cmake >= 3.16
+BuildRequires:	gettext-tools
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf6-kconfig-devel >= %{kframever}
+BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
 BuildRequires:	kf6-kdbusaddons-devel >= %{kframever}
 BuildRequires:	kf6-kdoctools-devel >= %{kframever}
 BuildRequires:	kf6-ki18n-devel >= %{kframever}
 BuildRequires:	kf6-kiconthemes-devel >= %{kframever}
-BuildRequires:	kf6-knotifications-devel >= %{kframever}
+BuildRequires:	kf6-kstatusnotifieritem-devel >= %{kframever}
+BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	ninja
 BuildRequires:	phonon-qt6-devel
 BuildRequires:	qt6-build >= %{qtver}
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXt-devel
+BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 %requires_eq_to Qt6Core Qt6Core-devel
