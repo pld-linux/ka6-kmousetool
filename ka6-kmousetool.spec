@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	26.08.1
+%define		kdeappsver	26.08.2
 %define		kframever	6.3.0
 %define		qtver		6.7.0
 %define		kaname		kmousetool
 Summary:	kmousetool
 Name:		ka6-%{kaname}
-Version:	26.08.1
+Version:	26.08.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c290356f297e44203358d015c5b2cc3a
+# Source0-md5:	fda8ef2cc2dd272449bc327d2283e209
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= %{qtver}
@@ -106,6 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(nl) %{_mandir}/nl/man1/kmousetool.1.*
 %lang(pt) %{_mandir}/pt/man1/kmousetool.1.*
 %lang(pt_BR) %{_mandir}/pt_BR/man1/kmousetool.1.*
+%lang(ru) %{_mandir}/ru/man1/kmousetool.1*
 %lang(sl) %{_mandir}/sl/man1/kmousetool.1*
 %lang(sv) %{_mandir}/sv/man1/kmousetool.1.*
 %lang(uk) %{_mandir}/uk/man1/kmousetool.1.*
